@@ -1,33 +1,39 @@
-header,
-.content,
-footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
+#app {
+  display: grid;
+  grid-row-gap: 10px;
   box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
   height: max-content;
 
   @media (min-width: $device-extra-large) {
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 100px auto auto 100px;
+    grid-column-gap: 10px;
     padding: 0 calc(50vw - (#{$layout-width} + 17px) / 2); // 17px (scroll)
   }
 }
 
 header,
 footer {
-  width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-  background: orange;
+  grid-column: 1 / -1;
+  background: $color-gray;
+}
+
+aside {
+  grid-column: 1;
+}
+
+footer {
+  grid-row: 4;
 }
 
 @media (min-width: $device-medium) {
   aside {
-    width: 200px;
     height: max-content;
   }
 
   main {
-    width: min-content;
     min-height: 100vh;
     flex-grow: 1;
     background: white;
