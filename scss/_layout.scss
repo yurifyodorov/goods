@@ -1,0 +1,35 @@
+header,
+section,
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  box-sizing: border-box;
+  height: max-content;
+
+  @media (min-width: $device-extra-large) {
+    padding: 0 calc(50vw - (#{$layout-width} + 17px) / 2); // 17px (scroll)
+  }
+}
+
+header,
+footer {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: orange;
+}
+
+@media (min-width: $device-medium) {
+  aside {
+    width: 200px;
+    height: max-content;
+  }
+
+  main {
+    width: min-content;
+    min-height: 100vh;
+    flex-grow: 1;
+    background: white;
+  }
+}

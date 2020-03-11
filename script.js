@@ -59,7 +59,10 @@ function initialize(products) {
     // if the category and search term are the same as they were the last time a
     // search was run, the results will be the same, so there is no point running
     // it again — just return out of the function
-    if (category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
+    if (
+      category.value === lastCategory &&
+      searchTerm.value.trim() === lastSearch
+    ) {
       return;
     } else {
       // update the record of last category and search term
@@ -162,13 +165,15 @@ function initialize(products) {
   // Display a product inside the <main> element
   function showProduct(objectURL, product) {
     // create <section>, <h2>, <p>, and <img> elements
-    const section = document.createElement('section');
-    const heading = document.createElement('h2');
+    const productCard = document.createElement('div');
+    const heading = document.createElement('h2', 'test');
     const para = document.createElement('p');
     const image = document.createElement('img');
 
     // give the <section> a classname equal to the product "type" property so it will display the correct icon
-    section.setAttribute('class', product.category);
+    productCard.setAttribute('class', 'product-card');
+    heading.setAttribute('class', 'title');
+    image.setAttribute('class', 'image');
 
     // Give the <h2> textContent equal to the product "title" property, but with the first character
     // replaced with the uppercase version of the first character
@@ -187,9 +192,9 @@ function initialize(products) {
     image.alt = product.title;
 
     // append the elements to the DOM as appropriate, to add the product to the UI
-    main.appendChild(section);
-    section.appendChild(heading);
-    section.appendChild(para);
-    section.appendChild(image);
+    main.appendChild(productCard);
+    productCard.appendChild(image);
+    productCard.appendChild(heading);
+    productCard.appendChild(para);
   }
 }

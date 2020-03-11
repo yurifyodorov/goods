@@ -2,9 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Can Store</title>
-    <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Raleway" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cherry+Swash|Raleway"
+      rel="stylesheet"
+    />
+    <link href="css/main.min.css" rel="stylesheet" />
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
@@ -12,31 +16,31 @@
 
   <body>
     <header>
-      <h1>Goods</h1>
+      <h1>Стройтовары "Михалыч"</h1>
     </header>
-    <div>
-      <aside>
-        <form>
-          <div>
-            <label for="category">Выберите категорию:</label>
-            <select id="category">
-              <option selected>Все</option>
-              <option>облицовочные материалы</option>
-              <option>сантехника</option>
-              <option>метизы</option>
-            </select>
-          </div>
-          <div>
-            <label for="searchTerm">Введите поисковый запрос:</label>
-            <input type="text" id="searchTerm" placeholder="что ищем?" />
-          </div>
-          <div>
-            <button>Найти</button>
-          </div>
-        </form>
-      </aside>
-      <main></main>
-    </div>
+    <aside class="products-filter">
+      <form>
+        <div>
+          <label for="category">Выберите категорию:</label>
+          <select id="category">
+            <option selected>все</option>
+            <option>облицовочные материалы</option>
+            <option>сантехника</option>
+            <option>метизы</option>
+          </select>
+        </div>
+        <div>
+          <label for="searchTerm">Введите поисковый запрос:</label>
+          <input type="text" id="searchTerm" placeholder="что ищем?" />
+        </div>
+        <div>
+          <button>Найти</button>
+        </div>
+      </form>
+    </aside>
+    <main class="products">
+      <!-- content -->
+    </main>
     <footer>
       footer
     </footer>
